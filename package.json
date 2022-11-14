@@ -5,8 +5,9 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
+    "build": "cd backend && npm install  && cd ../practica-mern && npm install && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node backend/server.js"
   },
   "author": "",
   "license": "ISC",
