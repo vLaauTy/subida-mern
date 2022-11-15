@@ -9,9 +9,7 @@ const app = express();
 
 app.use(express.json());
 
-app.get("/", (req, res) => {
-    res.send("server andando" + port)
-});
+
 
 app.get("/api/getpizzas", (req, res) => {
     res.send(data.products)

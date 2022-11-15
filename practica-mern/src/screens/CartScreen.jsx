@@ -34,6 +34,7 @@ const CartScreen = () => {
         navigate('signin?redirect=/shiping')
     }
 
+    console.log(cartItems);
     return (
         <div>
             <h3>Carro</h3>

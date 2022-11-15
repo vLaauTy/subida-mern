@@ -10,6 +10,7 @@ import { useContext } from 'react';
 import { Store } from './Store';
 import CartScreen from './screens/CartScreen';
 import './index.css'
+import Producto from './components/Producto';
 
 function App() {
 
@@ -19,7 +20,7 @@ function App() {
 
     <div className='App'>
       <NavBar />
-
+      <Producto />
       <Routes>
         <Route path='/cart' element={<CartScreen />} />
         <Route path="/product/:_id" element={<ProductScreen />} />

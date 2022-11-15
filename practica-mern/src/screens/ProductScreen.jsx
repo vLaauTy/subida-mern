@@ -69,7 +69,14 @@ const ProductScreen = () => {
             ) : (
                 <p>{product.stock} sin stock</p>
             )}
+            <img
+                src={product.image}
+                className="img-fluid"
+                alt=""
+                style={{ height: "200px" }}
+            />
             <div className="m-1 w-100">
+                <p>{product.description}</p>
                 <button onClick={addToCartHandler} className="btn">ADD TO CART</button>
             </div>
         </div>
