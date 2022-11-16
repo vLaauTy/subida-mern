@@ -17,7 +17,7 @@ const CartScreen = () => {
     } = state;
 
     const updateCartHandler = async (item, quantity) => {
-        const { data } = await axios.get(`/api/getpizzas/${item._id}`);
+        const { data } = await axios.get(`/api/products/${item._id}`);
         if (data.stock < quantity) {
             window.alert('Producto sin stock');
             return;
@@ -31,7 +31,7 @@ const CartScreen = () => {
     }
 
     const checkoutHandler = (item) => {
-        navigate('signin?redirect=/shiping')
+        navigate('/signin?redirect=/shipping');
     }
 
     console.log(cartItems);

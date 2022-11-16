@@ -21,7 +21,7 @@ const reducer = (state, action) => {
 const ProductScreen = () => {
     const navigate = useNavigate();
     const params = useParams();
-    const { _id } = params
+    const { slug } = params
 
 
     const [{ loading, error, product }, dispatch] = useReducer(reducer, {
@@ -33,21 +33,21 @@ const ProductScreen = () => {
         const fetchData = async () => {
             dispatch({ type: 'FETCH_REQUEST' });
             try {
-                const result = await axios.get(`/api/getpizzas/_id/${_id}`);
+                const result = await axios.get(`/api/products/slug/${slug}`);
                 dispatch({ type: 'FETCH_SUCCESS', payload: result.data });
             } catch (err) {
                 dispatch({ type: 'FETCH_FAIL', payload: err.message });
             }
         };
         fetchData();
-    }, [_id]);
+    }, [slug]);
 
     const { state, dispatch: cxtDispatch } = useContext(Store);
     const { cart } = state
     const addToCartHandler = async () => {
         const existItem = cart.cartItems.find((x) => x._id === product._id);
         const quantity = existItem ? existItem.quantity + 1 : 1;
-        const { data } = await axios.get(`/api/getpizzas/${product._id}`);
+        const { data } = await axios.get(`/api/products/${product._id}`);
         if (data.stock < quantity) {
             window.alert('Producto sin stock');
             return;
@@ -57,7 +57,8 @@ const ProductScreen = () => {
         navigate('/cart')
     }
 
-    console.log(cart);
+
+    console.log(product);
 
 
 
