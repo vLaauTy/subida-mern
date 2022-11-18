@@ -12,6 +12,8 @@ import CartScreen from './screens/CartScreen';
 import './index.css'
 import Producto from './components/Producto';
 import SigIn from './screens/SigIn';
+import ShippingAdress from './screens/ShippingAdress';
+import SignUp from './screens/SignUp';
 
 function App() {
 
@@ -25,7 +27,9 @@ function App() {
       <Routes>
         <Route path='/cart' element={<CartScreen />} />
         <Route path='/signin' element={<SigIn />} />
+        <Route path='/signup' element={<SignUp />} />
         <Route path="/product/:slug" element={<ProductScreen />} />
+        <Route path='/shipping' element={<ShippingAdress />} />
         <Route path="/" element={<Home />} />
       </Routes>
     </div>

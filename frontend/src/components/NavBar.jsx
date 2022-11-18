@@ -13,6 +13,7 @@ const NavBar = () => {
   const signoutHandler = () => {
     ctxDispatch({ type: 'USER_SIGNOUT' });
     localStorage.removeItem('userInfo');
+    localStorage.removeItem('shippingAddress');
   }
   let [open, setopen] = useState(false)
   console.log(userInfo);

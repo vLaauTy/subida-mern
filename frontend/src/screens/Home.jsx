@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
-import Pizza from "../components/Pizza";
-import { productos } from "../data";
 import axios from "axios";
 import { useReducer } from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { Link } from "react-router-dom";
 import logger from "use-reducer-logger";
+import Pizza from "../components/Pizza";
 
 const reducer = (state, action) => {
     switch (action.type) {
@@ -28,7 +27,7 @@ const Home = () => {
         error: "",
     });
 
-    // const [products, setproducts] = useState([])
+
     useEffect(() => {
         const fetchData = async () => {
             dispatch({ type: "FETCH_REQUEST" });
@@ -39,7 +38,7 @@ const Home = () => {
                 dispatch({ type: "FETCH_FAIL", payload: err.message });
             }
 
-            // setProducts(result.data);
+
         };
         fetchData();
     }, []);

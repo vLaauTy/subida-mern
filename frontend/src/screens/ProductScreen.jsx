@@ -21,7 +21,7 @@ const reducer = (state, action) => {
 const ProductScreen = () => {
     const navigate = useNavigate();
     const params = useParams();
-    const { slug } = params
+    const { slug } = params;
 
 
     const [{ loading, error, product }, dispatch] = useReducer(reducer, {
@@ -79,6 +79,7 @@ const ProductScreen = () => {
             <div className="m-1 w-100">
                 <p>{product.description}</p>
                 <button onClick={addToCartHandler} className="btn">ADD TO CART</button>
+                <p>{product.createdAt}</p>
             </div>
         </div>
     )

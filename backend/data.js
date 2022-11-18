@@ -41,6 +41,9 @@ const data = {
             receta: true,
             day: false,
         },
+        {
+
+        }
     ],
 };
 
